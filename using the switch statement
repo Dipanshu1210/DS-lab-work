@@ -1,0 +1,65 @@
+#include<stdio.h>
+void main()
+{
+	int n;
+	char ch = 'y';
+	while(ch=='y' || ch=='Y')
+	{
+		
+	printf("Enter the number = ");
+	scanf("%d",&n);
+	switch(n)
+	{
+
+	case 1:
+		printf("ONE");
+		break;
+		
+		case 2:
+		printf("TWO");
+		break;
+		
+		case 3:
+		printf("THREE");
+		break;
+		
+		case 4:
+		printf("FOUR");
+		break;
+		
+		case 5:
+		printf("FIVE");
+		break;
+		
+		case 6:
+		printf("SIX");
+		break;
+		
+		case 7:
+		printf("SEVEN");
+		break;
+		
+		case 8:
+		printf("EIGHT");
+		break;
+		
+		case 9:
+		printf("NINE");
+		break;
+		
+		case 10:
+		printf("TEN");
+		break;
+		
+		default:
+			printf("out of the range");
+			break;
+		}
+			
+			printf(" Do you to continue the press y or n \n");
+			fflush(stdin);
+			scanf("%c",&ch);
+		}
+
+		
+}
