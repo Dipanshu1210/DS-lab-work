@@ -1,0 +1,126 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct nodeType
+{
+	int info;
+	struct nodeType *next;
+}stack;
+typedef enum{false,true} boolean;
+
+void createStack(stack **ps);
+boolean isEmpty(stack *ps);
+void push(stack **ps, int value);
+int pop(stack **ps);
+int peek(stack **ps);
+void disposeStack(stack **ps);
+
+void main()
+{
+	int choice,element;
+	stack *top;
+	createStack(&top);
+	do
+	{
+		printf(" the Operation available are  \n");
+		printf(" **************************** \n");
+		printf("1. Push \n");
+		printf("2. Pop \n");
+		printf("3. Peek \n");
+		printf("4. Exit \n");
+		printf("Enter your choice 1 to 4 = \n");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+			case 1:
+				printf("Enter the value = ");
+				scanf("%d",&element);
+				push(&top,element);
+				break;
+			case 2:
+				if(isEmpty(top))
+				{
+					printf("Stack is empty, Enter the any key to continue");
+					getch();
+				}
+				else
+				{
+					printf("value poped is %d \n",pop(&top));
+					printf("Press any key to continue ...............");
+					getch();
+				}
+				break;
+			case 3:
+					if(isEmpty(top))
+				{
+					printf("Stack is empty, Enter the any key to continue");
+					getch();
+				}
+				else
+				{
+					printf("value at top is %d \n",peek(top));
+					printf("Press any key to continue ...............");
+					getch();
+				}
+				
+		}
+	}
+	while(choice!=4);
+	disposeStack(&top);
+}
+
+void creatStack(stack **top)
+{
+	*top=NULL;
+}
+
+boolean isEmpty(stack *top);
+{
+    	if(top==NULL)
+	return true;
+}	
+	else
+	{
+	return false;
+	}
+	
+void push(stack **top,int value)
+{
+	stack *ptr;
+	ptr=(stack *) malloc (sizeof(stack));
+	if(ptr==NULL)
+    printf("\n Unable to allocate to mamory new code ....");
+	printf("\n Press any key to exit ........");
+	getch();
+	return;
+}
+
+ptr->info=value;
+ptr->next= *top;
+*top=ptr;
+}
+
+int pop(stack **top)
+{
+	int temp;
+	stack *ptr;
+	temp=(*ptr)->info;
+	ptr=*top;
+	*top=(*top)->next;
+	free(ptr);
+	return temp;
+}
+int peek(stack *top)
+{
+	return(*top->info;)
+}
+
+void disposeStack(stack **top)
+{
+	stack **ptr;
+while(*top !=NULL)
+{
+	ptr=*top;
+	*top=(*top)->next;
+	free(ptr);
+}
+}
