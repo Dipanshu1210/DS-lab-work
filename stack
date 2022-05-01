@@ -73,13 +73,11 @@ void creatStack(stack **top)
 	*top=NULL;
 }
 
-boolean isEmpty(stack *top);
+boolean isEmpty(stack *top)
 {
     	if(top==NULL)
 	return true;
-}	
 	else
-	{
 	return false;
 	}
 	
@@ -94,29 +92,29 @@ void push(stack **top,int value)
 	return;
 }
 
-ptr->info=value;
-ptr->next= *top;
-*top=ptr;
-}
+//ptr->info=value;
+//ptr->next= *top;                                                                //195
+//*top=ptr;
+//}
 
 int pop(stack **top)
 {
 	int temp;
 	stack *ptr;
-	temp=(*ptr)->info;
+	temp=(*top)->info;
 	ptr=*top;
 	*top=(*top)->next;
 	free(ptr);
 	return temp;
 }
-int peek(stack *top)
+int peek(stack **top)
 {
-	return(*top->info;)
+	return(top->info);
 }
 
 void disposeStack(stack **top)
 {
-	stack **ptr;
+	stack *ptr;
 while(*top !=NULL)
 {
 	ptr=*top;
