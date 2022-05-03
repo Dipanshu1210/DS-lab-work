@@ -40,26 +40,26 @@ void main()
 				if(isEmpty(top))
 				{
 					printf("Stack is empty, Enter the any key to continue");
-					getch();
+					//getch();
 				}
 				else
 				{
 					printf("value poped is %d \n",pop(&top));
 					printf("Press any key to continue ...............");
-					getch();
+					//getch();
 				}
 				break;
 			case 3:
 					if(isEmpty(top))
 				{
 					printf("Stack is empty, Enter the any key to continue");
-					getch();
+					//getch();
 				}
 				else
 				{
-					printf("value at top is %d \n",peek(top));
+					printf("value at top is %d \n",peek(**top));
 					printf("Press any key to continue ...............");
-					getch();
+				//	getch();
 				}
 				
 		}
@@ -88,7 +88,7 @@ void push(stack **top,int value)
 	if(ptr==NULL)
     printf("\n Unable to allocate to mamory new code ....");
 	printf("\n Press any key to exit ........");
-	getch();
+//	getch();
 	return;
 }
 
