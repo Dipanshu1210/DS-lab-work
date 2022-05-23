@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 20
+void bubbleSortModified(int *a,int n);
+void main()
+{
+	int i,n,a[MAX];
+	printf("\n Enter the size of the array \n");
+	scanf("%d",&n);
+	if(n>MAX)
+	{
+		printf("\n Input size of the array greater than declared size \n");
+		exit(1);
+	}
+	printf("\n Enter the %d element of the array \n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	 bubbleSortModified(a,n);
+	printf("\n Sortest list of the element \n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	printf(" \n ");
+	getch();
+}
+
+void bubbleSortModified(int *a,int n)
+{
+	int j,k,temp,exchange_flag=1;
+	k=1;
+	while((k<n) && (exchange_flag))
+	{
+		exchange_flag=0;
+		for(j=0;j<n-k;j++)
+		{
+			if(a[j]>a[j+1])
+			{
+				exchange_flag=1;
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}
+		k++;
+	}
+}
+
+
+
+output:-
+
+
+
+ Enter the size of the array
+5
+
+ Enter the 5 element of the array
+4
+63
+12
+98
+78
+
+ Sortest list of the element
+4       12      63      78      98
+
+
