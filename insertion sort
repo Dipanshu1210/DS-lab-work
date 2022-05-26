@@ -1,0 +1,53 @@
+//insertion sort
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 20
+void insertionsort(int a[],int n);
+void main()
+{
+    int i,n,a[MAX];
+    printf("Enter the size of the array \n");
+    scanf("%d",&n);
+    if(n>MAX)
+    {
+        printf("Input size of the array \n");
+        exit(1);
+    }
+    printf("Enter %d  ekements of the array \n",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    insertionsort(a,n);
+    printf("Sorted list of the element \n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d \t",a[i]);
+    }
+    printf(" ");
+    getch();
+}
+
+void insertionsort(int a[],int n)
+{
+    int j,k,temp;
+    for(k=1;k<=n-1;k++)
+    {
+        temp=a[k];
+        j=k-1;
+        while((temp<a[j]) && (j>=0))
+        {
+            a[j+1]=a[j];
+            j=j-1;
+        }
+        a[j+1]=temp;
+    }
+}
+
+
+
+
+
+
