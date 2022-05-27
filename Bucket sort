@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 20
+void bucketsort(int *a,int n);
+void main()
+{
+	int i,n,a[MAX];
+	printf("\n Enter the size of the array \n");
+	scanf("%d",&n);
+	if(n>MAX)
+	{
+		printf("\n Input size of the array greater than declared size \n");
+		exit(1);
+	}
+	printf("\n Enter the %d element of the array \n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	 bucketsort(a,n);
+	printf("\n Sortest list of the element \n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	printf(" \n ");
+	getch();
+}
+
+void bucketsort(int a[],int n)
+{
+	int i,j,k,r,digitCount=0,divisor=1,largest,passNo;
+	int bucket[10][20],buckCount[10];
+	largest=a[0];
+	for(i=1;i<n;i++)
+	{
+		if(a[i]>largest) largest=a[i];
+	}
+	while(largest>0)
+	{
+		digitCount++;
+		largest /=10;
+		
+	}
+	for(passNo=0;passNo<digitCount;passNo++)
+	{
+		for(k=0;k<10;k++)
+		buckCount[k]=0;
+		for(i=0;i<n;i++)
+		{
+			r=(a[i] /divisor) %10;
+			bucket[r] [buckCount[r]++]=a[i];
+			
+		}
+		i=0;
+		for(k=0;k<10;k++)
+		{
+			for(j=0;j<buckCount[k];j++)
+			a[i++]=bucket[k][j];
+		}
+		divisor *=10;
+		}
+	
+}
+
+
