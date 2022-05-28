@@ -65,3 +65,19 @@ void bucketsort(int a[],int n)
 }
 
 
+output:-
+
+
+ Enter the size of the array
+5
+
+ Enter the 5 element of the array
+45
+65
+25
+78
+98
+
+ Sortest list of the element
+25      45      65      78      98
+
