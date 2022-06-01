@@ -1,11 +1,11 @@
 #include<stdio.h>
-#include<conio.h>
-#define MAx 20
+#include<stdlib.h>
+#define MAX 20
 typedef struct nodeType
 {
     struct nodeType *left;
     int info;
-    struct nodeType;
+    struct nodeType *right;
 }bnode;
 
 void insertElementRecursive(bnode **tree,int element);
@@ -21,7 +21,7 @@ void main()
     if(n>MAX)
     {
         printf("input size of the array greater than declared type \n");
-        exit(0);
+        exit(1);
     }
     printf("Enter the %d integer element of the array \n",n);
     for(i=0;i<n;i++)
@@ -43,14 +43,15 @@ void insertElementRecursive(bnode **tree,int element)
 {
     if(*tree==(bnode *)NULL)
     {
-        *tree=(bnode*) maloc(sizeof(bnode));
+        *tree=(bnode*) malloc(sizeof(bnode));
         (*tree)->info=element;
         (*tree)->left=(*tree)->right=(bnode*)NULL;
     }
-    else if(element<(*tree)->info)
+    else if
+    (element<(*tree)->info)
     insertElementRecursive(&((*tree)->left),element);
     else 
-    inorderTraversalRecursive(&((*tree)->right),element);
+    inorderElementRecursive(&((*tree)->right),element);
 }
 
 void inorderTraversalRecursive(bnode *tree)
