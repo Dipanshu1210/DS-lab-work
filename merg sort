@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 20
+void mergeSort(int a[],int beg,int end);
+void mergingSortedSubArrays(int a[MAX],int lb,int lr,int rb,int rr);
+
+void main()
+{
+	int i,n,a[MAX];
+	printf("Enter the size of the array \n");
+	scanf("%d",&n);
+	if(n>MAX)
+	{
+		printf("Input size of the arraygraeter than declared size  \n");
+		exit(1);
+	}
+	printf("Enter the %d positive integer element of the array",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		
+	}
+	mergSort(a,0,n-1);
+	printf("sorted list of the element \n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+		
+	}
+	printf("\n");
+	
+	
+}
+
+
+void mergeSort(int a[],int beg,int end)
+{
+	int mid;
+	if(beg<end)
+	{
+		mid=(beg+end)/2;
+		mergSort(a,beg,mid);
+		mergSort(a,mid+1,end);
+		mergingSortedSubArrays(a,beg,mid,mid+1,end);
+	}
+}
+
+void mergingSortedSubArrays(int a[MAX],int lb,int lr,int rb,int rr)
+{
+	int na,nb,nc,k,c[MAX];
+	na=lb;
+	nb=rb;
+	nc=lb;
+	while((na<=lr) && (nb<=rr))
+	{
+		if(a[na]<a[nb])
+		c[nc]=a[na++];
+		else
+		c[nc]=a[nb++];
+		nc++;
+	}
+	if(na>lr)
+	{
+		while(nb<=rr)
+		c[nc++]=a[nb++];
+		
+		
+	}
+	else
+	{
+		while(na<=lr)
+		c[nc++]=a[na++];
+	}
+	for(k=lb;k<=rr;k++)
+	a[k]=c[k];
+}
