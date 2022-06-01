@@ -51,7 +51,7 @@ void insertElementRecursive(bnode **tree,int element)
     (element<(*tree)->info)
     insertElementRecursive(&((*tree)->left),element);
     else 
-    inorderElementRecursive(&((*tree)->right),element);
+    insertElementRecursive(&((*tree)->right),element);
 }
 
 void inorderTraversalRecursive(bnode *tree)
