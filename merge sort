@@ -34,6 +34,27 @@ void main()
 }
 
 
+
+
+outpiut:-
+
+
+Enter the size of the array
+5
+Enter the 5 positive integer element of the array45
+25
+36
+85
+73
+sorted list of the element
+25      36      45      73      85
+
+--------------------------------
+Process exited after 15.33 seconds with return value 10
+Press any key to continue . . .
+
+
+
 void mergeSort(int a[],int beg,int end)
 {
 	int mid;
