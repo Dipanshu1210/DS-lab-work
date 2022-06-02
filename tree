@@ -4,14 +4,14 @@
 typedef struct nodeType
 {
     struct nodeType *left;
-    int info,tree;
+    int info;
     struct nodeType *right;
 }bnode;
 
 void insertElementRecursive(bnode **tree,int element);
 void inorderTraversalRecursive(bnode *tree);
 void removeTree(bnode **tree);
-
+bnode *tree;
 void main()
 {
     int i,n,a[MAX];
@@ -20,7 +20,7 @@ void main()
     scanf("%d",&n);
     if(n>MAX)
     {
-        printf("input size of the array greater than declared type \n");
+        printf("input size of the array \n");
         exit(1);
     }
     printf("Enter the %d integer element of the array \n",n);
@@ -28,14 +28,14 @@ void main()
     {
         scanf("%d",&a[i]);
     }
-    for(i=9;i<n;i++)
+    for(i=0;i<n;i++)
     {
         insertElementRecursive(&root,a[i]);
     }
-    printf("sorted list of element \n");
+    printf("sorted list of element \n ");
     
     inorderTraversalRecursive(root);
-    printf("\n");
+    printf(" \n ");
     removeTree(&tree);
 }
 
@@ -59,7 +59,7 @@ void inorderTraversalRecursive(bnode *tree)
     if(tree!=(bnode*)NULL)
     {
         inorderTraversalRecursive(tree->left);
-        printf("%d",tree->info);
+        printf("%d \t",tree->info);
         inorderTraversalRecursive(tree->right);
     }
 }
@@ -72,3 +72,7 @@ void removeTree(bnode **tree)
         removeTree(&(*tree)->right);
     }
 }
+
+
+
+
