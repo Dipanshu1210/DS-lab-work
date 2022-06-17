@@ -1,0 +1,47 @@
+#include <stdio.h>
+void main()
+{
+int n,a[1000],i,k,flag = -1;
+
+
+printf("Enter the number of elements wants to enter in array => "); scanf("%d", &n);
+printf("Enter the %d elements one by one \n",n);
+for (i=0;i<n;i++) scanf("%d",&a[i]); 
+
+printf("Enter the element to be searched in array  "); scanf("%d",&k);
+
+for (i=0;i<n;i++)
+{
+   if (k==a[i])
+   {
+    flag = i;
+     break;
+   }
+}
+ (flag== -1)? printf("Element not found"):printf("Element is present at pos => %d", flag+1);
+}
+
+
+
+
+
+
+
+
+
+
+
+out[put:-
+
+Enter the number of elements wants to enter in array => 5
+Enter the 5 elements one by one
+45
+65
+78
+98
+14
+Enter the element to be searched in array  78
+Element is present at pos => 3
+--------------------------------
+Process exited after 8.732 seconds with return value 30
+Press any key to continue . . .
