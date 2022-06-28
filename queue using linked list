@@ -8,6 +8,10 @@ struct Node
 }*top = NULL; 
 
 
+
+
+
+
 void push(int);
 void pop();
 void display();
