@@ -7,8 +7,6 @@ struct Node
     struct Node *next;
 }*top = NULL; 
 
-
-
 void push(int);
 void pop();
 void display();
