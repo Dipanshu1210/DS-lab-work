@@ -55,8 +55,6 @@ void bubbleSortModified(int *a,int n)
 
 output:-
 
-
-
  Enter the size of the array
 5
 
