@@ -10,7 +10,6 @@ void main()
 	scanf("%d",&n);
 	if(n>MAX)
 	{
-	
 		printf("\n Input size of the array greater than declared size \n");
 		exit(1);
 	}
@@ -49,6 +48,8 @@ void bubbleSortModified(int *a,int n)
 		k++;
 	}
 }
+
+
 
 
 
