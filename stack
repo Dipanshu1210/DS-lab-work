@@ -59,7 +59,6 @@ void main()
 				{
 					printf("value at top is %d \n",peek(**top));
 					printf("Press any key to continue ...............");
-				//	getch();
 				}
 				
 		}
@@ -88,7 +87,6 @@ void push(stack **top,int value)
 	if(ptr==NULL)
     printf("\n Unable to allocate to mamory new code ....");
 	printf("\n Press any key to exit ........");
-//	getch();
 	return;
 }
 
