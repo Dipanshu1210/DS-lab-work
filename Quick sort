@@ -36,7 +36,6 @@ int partition(int A[], int low, int high)
         }
     } while (i < j);
 
-    // Swap A[low] and A[j]
     temp = A[low];
     A[low] = A[j];
     A[j] = temp;
@@ -51,7 +50,7 @@ void quickSort(int A[], int low, int high)
     {
         partitionIndex = partition(A, low, high); 
         quickSort(A, low, partitionIndex - 1);  // sort left subarray 
-        quickSort(A, partitionIndex + 1, high); // sort right subarray
+        quickSort(A, partitionIndex + 1, high); 
     }
 }
 
