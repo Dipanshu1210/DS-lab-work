@@ -40,20 +40,17 @@ void main()
 				if(isEmpty(top))
 				{
 					printf("Stack is empty, Enter the any key to continue");
-					//getch();
 				}
 				else
 				{
 					printf("value poped is %d \n",pop(&top));
 					printf("Press any key to continue ...............");
-					//getch();
 				}
 				break;
 			case 3:
 					if(isEmpty(top))
 				{
 					printf("Stack is empty, Enter the any key to continue");
-					//getch();
 				}
 				else
 				{
