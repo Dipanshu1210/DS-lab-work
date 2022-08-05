@@ -87,8 +87,6 @@ void push(stack **top,int value)
 	return;
 }
 
-
-
 int pop(stack **top)
 {
 	int temp;
